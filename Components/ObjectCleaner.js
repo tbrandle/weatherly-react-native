@@ -1,4 +1,5 @@
 import Weatherly from './Weatherly';
+import { AsyncStorage } from 'react-native';
 
 const date = (weather) => {
   const dateObject = {
@@ -56,7 +57,7 @@ const tenDayForecast = (weather) => {
 const objectCleaner = (weather) => {
   if (weather.response.error || weather.response.results) {
     alert(weather.response.error.description)
-    localStorage.clear();
+    AsyncStorage.clear();
     return {};
   }
   const dateObject = date(weather);
