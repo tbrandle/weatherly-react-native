@@ -60,8 +60,8 @@ export default class Weatherly extends Component {
              >
              <Image style={{width: 50, height: 50}} source={{uri:'http://www.grote.com/wp-content/themes/grote/img/icon-search.png'}}/>
            </TouchableOpacity>
-
          </View>
+         <WeatherCards weather= {this.state.weather}/>
       </View>
     );
   }
