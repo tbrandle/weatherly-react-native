@@ -30,7 +30,7 @@ const style = StyleSheet.create({
   todayCurrent:{
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor: 'grey',
-    paddingBottom: 15,
+    paddingVertical: 15,
     alignItems: 'center',
   },
   currentLocationIcon: {
@@ -54,10 +54,12 @@ const style = StyleSheet.create({
   currentLow: {
     fontSize: 15,
     alignItems: 'center',
-    padding: 10,
+    paddingTop: 6,
   },
   currentDescription:{
     fontSize: 15,
+    padding: 12,
+    textAlign: 'center',
   }
 })
 

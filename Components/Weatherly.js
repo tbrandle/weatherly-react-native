@@ -59,7 +59,7 @@ export default class Weatherly extends Component {
                disabled={!this.state.location}
                onPress={() => this.submitLocation() }
                >
-               <Image style={{width: 50, height: 50}} source={{uri:'http://www.grote.com/wp-content/themes/grote/img/icon-search.png'}}/>
+               <Image style={{width: 28, height: 36}} source={{uri:'http://www.grote.com/wp-content/themes/grote/img/icon-search.png'}}/>
              </TouchableOpacity>
            </View>
         </View>
@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
     height: 168
   },
   location: {
+    color: 'white',
     textAlign: 'center',
     width: 163,
     padding: 11,
