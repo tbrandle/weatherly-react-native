@@ -53,6 +53,8 @@ const style = StyleSheet.create({
   },
   currentLow: {
     fontSize: 15,
+    alignItems: 'center',
+    padding: 10,
   },
   currentDescription:{
     fontSize: 15,
