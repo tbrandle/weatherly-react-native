@@ -16,7 +16,7 @@ const WeatherCards = ({ weather }) => {
     );
   }
   return (
-    <View>
+    <View style={{height: 300}}>
       <CurrentWeather { ...weather.currentObject }/>
     </View>
   );

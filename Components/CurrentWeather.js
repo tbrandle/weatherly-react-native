@@ -3,50 +3,60 @@ import { View, Image, Text, StyleSheet } from 'react-native';
 
 const CurrentWeather  = ({ city, state, icon, currentTemp, description, high, low }) => {
     return (
-      <View className='today-current'>
-        <View className='current-location-icon'>
-          <Text className='current-location'>
+      <View style={style.todayCurrent}>
+        <View style={style.currentLocationIcon}>
+          <Text style={style.currentLocation}>
               { city },
               { state }
           </Text>
-          <Image className='current-icon'
-            src={ this.props.icon } alt='current forecast icon'/>
+          <Image style={style.currentIcon} source={{ uri: icon }}/>
         </View>
-        <View className='current-temp'>
+        <Text style={style.currentTemp}>
           { currentTemp }&deg;
+        </Text>
+        <View style={{ flexDirection: 'row' }}>
+          <Text style={style.currentHigh}>{ high }&deg; /</Text>
+          <Text style={style.currentLow}>&nbsp; { low }&deg;</Text>
         </View>
-        <View className='current-hi-low'>
-          <Text className='current-hi'>{ high }&deg; /</Text>
-          <Text className='current-low'>&nbsp; { low }&deg;</Text>
-        </View>
-        <View className='current-description'>
+        <Text style={style.currentDescription}>
           { description }
-        </View>
+        </Text>
       </View>
     );
   }
-}
+
 
 const style = StyleSheet.create({
   todayCurrent:{
-
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: 'grey',
+    paddingBottom: 15,
+    alignItems: 'center',
   },
   currentLocationIcon: {
-
+    justifyContent: 'center',
   },
   currentLocation:{
 
   },
   currentIcon:{
 
-  },
-  currentForecastIcon:{
-
+    height: 35,
+    paddingTop: 10,
+    paddingLeft: 25,
   },
   currentTemp:{
-
+    fontSize: 55,
+  },
+  currentHigh:{
+    fontSize: 20,
+  },
+  currentLow: {
+    fontSize: 15,
+  },
+  currentDescription:{
+    fontSize: 15,
   }
-
 })
 
 export default CurrentWeather;

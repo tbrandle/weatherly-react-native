@@ -44,25 +44,28 @@ export default class Weatherly extends Component {
 
   render() {
     return (
-      <View style={styles.inputSection}>
-        <Text style={styles.logo}>Weatherly</Text>
-        <View style={{flexDirection: 'row'}}>
-          <TextInput
-             style={styles.location}
-             placeholder='City, State'
-             value={this.state.location}
-             onChangeText={(text) => this.setState({ location: text })}
-             />
-           <TouchableOpacity
-             title="submit"
-             disabled={!this.state.location}
-             onPress={() => this.submitLocation() }
-             >
-             <Image style={{width: 50, height: 50}} source={{uri:'http://www.grote.com/wp-content/themes/grote/img/icon-search.png'}}/>
-           </TouchableOpacity>
-         </View>
-         <WeatherCards weather= {this.state.weather}/>
+      <View style={{height:700}}>
+        <View style={styles.inputSection}>
+          <Text style={styles.logo}>Weatherly</Text>
+          <View style={{flexDirection: 'row'}}>
+            <TextInput
+               style={styles.location}
+               placeholder='City, State'
+               value={this.state.location}
+               onChangeText={(text) => this.setState({ location: text })}
+               />
+             <TouchableOpacity
+               title="submit"
+               disabled={!this.state.location}
+               onPress={() => this.submitLocation() }
+               >
+               <Image style={{width: 50, height: 50}} source={{uri:'http://www.grote.com/wp-content/themes/grote/img/icon-search.png'}}/>
+             </TouchableOpacity>
+           </View>
+        </View>
+        <WeatherCards weather= {this.state.weather}/>
       </View>
+
     );
   }
 }
