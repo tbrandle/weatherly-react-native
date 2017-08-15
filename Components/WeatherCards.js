@@ -16,7 +16,7 @@ const WeatherCards = ({ weather }) => {
     );
   }
   return (
-    <View style={{flex: 1}}>
+    <View style={{}}>
       <CurrentWeather { ...weather.currentObject }/>
       <Hourly hourlyArray={ weather.hourlyArray }
         dateObject={ weather.dateObject }/>

@@ -2,13 +2,13 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 
 import Date from './Date';
-// <Date { ...dateObject } />
 
 const Hourly = ({ hourlyArray, dateObject }) => {
 
   return (
-    <ScrollView style={style.hourlySection} horizontal={true}>
-      <View style={style.hourlyForecast}>
+    <View style={style.hourlySection} >
+      <Date { ...dateObject } />
+      <ScrollView style={style.hourlyForecast} horizontal={true}>
         { hourlyArray.map((value, i) => {
           return (
             <View style={style.hourly}>
@@ -22,9 +22,9 @@ const Hourly = ({ hourlyArray, dateObject }) => {
             </View>
           )
         }) }
-      </View>
-      <Image style={style.dotIcon} source={{uri: 'https://rawgit.com/tbrandle/weatherly/master/css/images/dots.svg'}}/>
-    </ScrollView>
+      </ScrollView>
+      <Image style={style.dotIcon} source={{uri: 'http://freeiconbox.com/icon/256/17764.png'}}/>
+    </View>
   );
 
 }
@@ -34,18 +34,15 @@ const style = StyleSheet.create({
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor: 'grey',
     marginHorizontal: 10,
-    // flex: 1,
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   hourlyForecast: {
     height: 103,
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
   },
   hourly: {
     minWidth: 90,
-    // display: 'inline-block',
-    // fontSize: 20,
     marginBottom: 5,
     alignItems: 'center',
   },
@@ -57,8 +54,8 @@ const style = StyleSheet.create({
     width: 58,
   },
   dotIcon: {
-    flex: 1,
-    height: 30,
+    width: 31,
+    height: 20,
   },
 })
 
