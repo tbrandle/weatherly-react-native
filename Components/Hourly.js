@@ -1,49 +1,55 @@
 import React from 'react';
-import { Stylesheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 
 import Date from './Date';
+// <Date { ...dateObject } />
 
 const Hourly = ({ hourlyArray, dateObject }) => {
 
-    return (
-      <View style={style.hourlySection}>
-        <Date { ...dateObject } />
-        <View style={style.hourlyForecast}>
-          { hourlyArray.map((value, i) => {
-            return (
-              <View style={style.hourly}>
-                <Text style={style.hourlyTime}>
-                  { hourlyArray[i].time }
-                </Text>
-                <Image source={{uri: hourlyArray[i].icon }} />
-                <Text style={style.hourlyTemp}>
-                  { hourlyArray[i].temp }&deg;
-                </Text>
-              </View>
-            )
-          }) }
-        </View>
+  return (
+    <ScrollView style={style.hourlySection} horizontal={true}>
+      <View style={style.hourlyForecast}>
+        { hourlyArray.map((value, i) => {
+          return (
+            <View style={style.hourly}>
+              <Text style={style.hourlyTime}>
+                { hourlyArray[i].time }
+              </Text>
+              <Image source={{uri: hourlyArray[i].icon}} />
+              <Text style={style.hourlyTemp}>
+                { hourlyArray[i].temp }&deg;
+              </Text>
+            </View>
+          )
+        }) }
+      </View>
       <Image style={style.dotIcon} source={{uri: 'https://rawgit.com/tbrandle/weatherly/master/css/images/dots.svg'}}/>
-    </View>
-    );
+    </ScrollView>
+  );
 
 }
 
-const style = Stylesheet.create({
+const style = StyleSheet.create({
   hourlySection: {
-
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: 'grey',
+    marginHorizontal: 10,
   },
   hourlyForecast: {
-
+    // whiteSpace: 'nowrap',
+    // overflow: 'scroll',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   hourly: {
-
-  },
-  hourlyTemp: {
-
+    minWidth: 90,
+    // display: 'inline-block',
+    // fontSize: 20,
+    marginBottom: 5,
   },
   dotIcon: {
-
+    flex: 1,
+    height: 30,
   },
 })
 

@@ -40,12 +40,12 @@ const style = StyleSheet.create({
 
   },
   currentIcon:{
-
-    height: 35,
-    paddingTop: 10,
+    height: 60,
+    marginTop: 10,
     paddingLeft: 25,
   },
   currentTemp:{
+    marginLeft: 21,
     fontSize: 55,
   },
   currentHigh:{
