@@ -32,8 +32,8 @@ const Hourly = ({ hourlyArray, dateObject }) => {
 const style = StyleSheet.create({
   hourlySection: {
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: 'grey',
-    marginHorizontal: 10,
+    borderBottomColor: 'black',
+    paddingHorizontal: 10,
     justifyContent: 'space-between',
     alignItems: 'center',
   },
