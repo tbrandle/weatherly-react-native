@@ -18,11 +18,12 @@ const WeatherCards = ({ weather }) => {
   return (
     <View style={{height: 300}}>
       <CurrentWeather { ...weather.currentObject }/>
+      <Hourly hourlyArray={ weather.hourlyArray }
+        dateObject={ weather.dateObject }/>
+
     </View>
   );
 };
-// <Hourly hourlyArray={ weather.hourlyArray }
-//   dateObject={ weather.dateObject }/>
 // <TenDay tenDayArray={ weather.tenDayArray }/>
 
 const styles = StyleSheet.create({
