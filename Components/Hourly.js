@@ -15,7 +15,7 @@ const Hourly = ({ hourlyArray, dateObject }) => {
               <Text style={style.hourlyTime}>
                 { hourlyArray[i].time }
               </Text>
-              <Image source={{uri: hourlyArray[i].icon}} />
+              <Image style={style.currentIcon} source={{uri: hourlyArray[i].icon}} />
               <Text style={style.hourlyTemp}>
                 { hourlyArray[i].temp }&deg;
               </Text>
@@ -34,18 +34,27 @@ const style = StyleSheet.create({
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor: 'grey',
     marginHorizontal: 10,
+    // flex: 1,
   },
   hourlyForecast: {
-    // whiteSpace: 'nowrap',
-    // overflow: 'scroll',
+    height: 103,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
   hourly: {
     minWidth: 90,
     // display: 'inline-block',
     // fontSize: 20,
     marginBottom: 5,
+    alignItems: 'center',
+  },
+  hourlyTemp: {
+
+  },
+  currentIcon:{
+    height: 58,
+    width: 58,
   },
   dotIcon: {
     flex: 1,
