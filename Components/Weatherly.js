@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, .3)',
     backgroundColor: 'rgba(0, 0, 0, .3)',
     paddingTop: 14,
-    height: 168
+    height: 129,
   },
   location: {
     color: 'white',

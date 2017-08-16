@@ -3,7 +3,7 @@ import TenDay from './TenDay';
 import CurrentWeather from './CurrentWeather';
 
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, ScrollView, View, StyleSheet } from 'react-native';
 
 const WeatherCards = ({ weather }) => {
   if (!Object.keys(weather).length) {
@@ -16,15 +16,14 @@ const WeatherCards = ({ weather }) => {
     );
   }
   return (
-    <View style={{}}>
+    <ScrollView style={{}}>
       <CurrentWeather { ...weather.currentObject }/>
       <Hourly hourlyArray={ weather.hourlyArray }
         dateObject={ weather.dateObject }/>
-
-    </View>
+      <TenDay tenDayArray={ weather.tenDayArray }/>
+    </ScrollView>
   );
 };
-// <TenDay tenDayArray={ weather.tenDayArray }/>
 
 const styles = StyleSheet.create({
   validCity:{
