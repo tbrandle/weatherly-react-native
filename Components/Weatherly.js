@@ -21,7 +21,6 @@ export default class Weatherly extends Component {
     this.state = {
       location: '',
       weather: [],
-      storedItem: AsyncStorage.getItem('location'),
     };
   }
 
@@ -48,7 +47,6 @@ export default class Weatherly extends Component {
     AsyncStorage.setItem('location', this.state.location);
     this.fetchWeather(this.state.location);
     this.setState({ location: '' });
-    this.logStorage()
   }
 
   render() {
