@@ -9,7 +9,7 @@ const WeatherCards = ({ weather }) => {
   if (!Object.keys(weather).length) {
     return (
       <View>
-        <Text>
+        <Text style={{textAlign: 'center', paddingVertical: 10}}>
           Please enter a valid city and state
         </Text>
       </View>

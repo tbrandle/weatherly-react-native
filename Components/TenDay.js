@@ -13,7 +13,7 @@ const TenDay = ({ tenDayArray }) => {
                 { tenDayArray[i].day }
               </Text>
               <Image style={styles.weatherIcon} source={{uri: tenDayArray[i].icon }} />
-              <Text style={{width: 87}}>
+              <Text style={{width: 87, textAlign: 'right'}}>
                 { tenDayArray[i].high }&deg; / { tenDayArray[i].low }&deg;
               </Text>
             </View>
