@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+
+import WeatherCards from './WeatherCards.js';
+import objectCleaner from './ObjectCleaner.js';
+
 import {
   StyleSheet,
   Text,
@@ -10,8 +14,6 @@ import {
 } from 'react-native';
 
 
-import WeatherCards from './WeatherCards.js';
-import objectCleaner from './ObjectCleaner.js';
 
 export default class Weatherly extends Component {
   constructor() {
@@ -24,9 +26,15 @@ export default class Weatherly extends Component {
   }
 
   componentDidMount () {
-    const { storedItem } = this.state;
-    if (storedItem) {
-      this.fetchWeather(storedItem);
+    this.fetchLocalStorage();
+  }
+
+  async fetchLocalStorage() {
+    try {
+      const value = await AsyncStorage.getItem('location');
+      value !== null && this.fetchWeather(value);
+    } catch (error) {
+      console.log(error);
     }
   }
 
@@ -40,6 +48,7 @@ export default class Weatherly extends Component {
     AsyncStorage.setItem('location', this.state.location);
     this.fetchWeather(this.state.location);
     this.setState({ location: '' });
+    this.logStorage()
   }
 
   render() {

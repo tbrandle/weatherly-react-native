@@ -36,9 +36,6 @@ const style = StyleSheet.create({
   currentLocationIcon: {
     justifyContent: 'center',
   },
-  currentLocation:{
-
-  },
   currentIcon:{
     height: 60,
     marginTop: 10,

@@ -46,9 +46,6 @@ const style = StyleSheet.create({
     marginBottom: 5,
     alignItems: 'center',
   },
-  hourlyTemp: {
-
-  },
   currentIcon:{
     height: 58,
     width: 58,

@@ -16,7 +16,7 @@ const WeatherCards = ({ weather }) => {
     );
   }
   return (
-    <ScrollView style={{}}>
+    <ScrollView>
       <CurrentWeather { ...weather.currentObject }/>
       <Hourly hourlyArray={ weather.hourlyArray }
         dateObject={ weather.dateObject }/>
@@ -24,15 +24,6 @@ const WeatherCards = ({ weather }) => {
     </ScrollView>
   );
 };
-
-const styles = StyleSheet.create({
-  validCity:{
-
-  },
-  bottomSection: {
-
-  }
-})
 
 
 export default WeatherCards;
