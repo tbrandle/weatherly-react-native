@@ -12,11 +12,11 @@ const Hourly = ({ hourlyArray, dateObject }) => {
         { hourlyArray.map((value, i) => {
           return (
             <View key={i} style={style.hourly}>
-              <Text style={style.hourlyTime}>
+              <Text style={{backgroundColor: 'transparent'}}>
                 { hourlyArray[i].time }
               </Text>
               <Image style={style.currentIcon} source={{uri: hourlyArray[i].icon}} />
-              <Text style={style.hourlyTemp}>
+              <Text style={{backgroundColor: 'transparent'}}>
                 { hourlyArray[i].temp }&deg;
               </Text>
             </View>

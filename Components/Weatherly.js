@@ -58,6 +58,7 @@ export default class Weatherly extends Component {
             <TextInput
                style={styles.location}
                placeholder='City, State'
+               placeholderTextColor='lightgrey'
                value={this.state.location}
                onChangeText={(text) => this.setState({ location: text })}
                />

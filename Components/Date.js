@@ -14,6 +14,7 @@ const Date = ({ weekday, month, date }) => {
 const styles = StyleSheet.create({
   date: {
     marginVertical: 8,
+    backgroundColor: 'transparent',
   }
 })
 

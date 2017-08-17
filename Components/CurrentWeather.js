@@ -35,6 +35,7 @@ const style = StyleSheet.create({
   },
   currentLocationIcon: {
     justifyContent: 'center',
+    backgroundColor: 'transparent',
   },
   currentIcon:{
     height: 60,
@@ -44,19 +45,23 @@ const style = StyleSheet.create({
   currentTemp:{
     marginLeft: 21,
     fontSize: 55,
+    backgroundColor: 'transparent',
   },
   currentHigh:{
     fontSize: 20,
+    backgroundColor: 'transparent',
   },
   currentLow: {
     fontSize: 15,
     alignItems: 'center',
     paddingTop: 6,
+    backgroundColor: 'transparent',
   },
   currentDescription:{
     fontSize: 15,
     padding: 12,
     textAlign: 'center',
+    backgroundColor: 'transparent',
   }
 })
 

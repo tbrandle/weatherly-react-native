@@ -9,7 +9,7 @@ const WeatherCards = ({ weather }) => {
   if (!Object.keys(weather).length) {
     return (
       <View>
-        <Text style={{textAlign: 'center', paddingVertical: 10}}>
+        <Text style={styles.validCity}>
           Please enter a valid city and state
         </Text>
       </View>
@@ -25,5 +25,12 @@ const WeatherCards = ({ weather }) => {
   );
 };
 
+const styles = StyleSheet.create({
+  validCity: {
+    backgroundColor: 'transparent', 
+    textAlign: 'center',
+    paddingVertical: 10,
+  }
+})
 
 export default WeatherCards;
