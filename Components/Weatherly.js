@@ -59,6 +59,7 @@ export default class Weatherly extends Component {
                style={styles.location}
                placeholder='City, State'
                placeholderTextColor='lightgrey'
+               underlineColorAndroid='transparent'
                value={this.state.location}
                onChangeText={(text) => this.setState({ location: text })}
                />
@@ -91,8 +92,9 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
     width: 163,
-    padding: 11,
     backgroundColor: 'transparent',
+    borderBottomWidth: 2,
+    borderBottomColor: 'orange',
   },
   logo: {
     fontSize: 23,
