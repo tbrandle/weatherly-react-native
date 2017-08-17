@@ -8,7 +8,7 @@ const TenDay = ({ tenDayArray }) => {
         <Text style={{textAlign: 'center'}} >Ten Day Forecast</Text>
         { tenDayArray.map((value, i) => {
           return (
-            <View style={styles.tenDayForecast}>
+            <View key={i} style={styles.tenDayForecast}>
               <Text style={{width: 87}}>
                 { tenDayArray[i].day }
               </Text>

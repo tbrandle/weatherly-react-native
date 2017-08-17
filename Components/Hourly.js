@@ -11,7 +11,7 @@ const Hourly = ({ hourlyArray, dateObject }) => {
       <ScrollView style={style.hourlyForecast} horizontal={true}>
         { hourlyArray.map((value, i) => {
           return (
-            <View style={style.hourly}>
+            <View key={i} style={style.hourly}>
               <Text style={style.hourlyTime}>
                 { hourlyArray[i].time }
               </Text>
