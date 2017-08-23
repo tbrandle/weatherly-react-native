@@ -17,7 +17,6 @@ const oneHourForecast = ({ item }) => {
 }
 
 const Hourly = ({ hourlyArray, dateObject }) => {
-
   return (
     <View style={style.hourlySection} >
       <Date { ...dateObject } />
@@ -26,11 +25,11 @@ const Hourly = ({ hourlyArray, dateObject }) => {
         horizontal={true}
         data={hourlyArray}
         renderItem={oneHourForecast}
-        />
+        keyExtractor={ (item, index) => index }
+      />
       <Image style={style.dotIcon} source={{uri: 'http://freeiconbox.com/icon/256/17764.png'}}/>
     </View>
   );
-
 }
 
 const style = StyleSheet.create({
