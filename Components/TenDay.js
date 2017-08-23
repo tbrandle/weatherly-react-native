@@ -1,28 +1,31 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, FlatList } from 'react-native';
+
+const singleDayForecast = ({ item }) => {
+  return (
+    <View key={i} style={styles.tenDayForecast}>
+      <Text style={{width: 87, backgroundColor: 'transparent'}}>
+        { item.day }
+      </Text>
+      <Image style={styles.weatherIcon} source={{uri: item.icon }} />
+      <Text style={{width: 87, textAlign: 'right', backgroundColor: 'transparent'}}>
+        { item.high }&deg; / { item.low }&deg;
+      </Text>
+    </View>
+  )
+}
 
 const TenDay = ({ tenDayArray }) => {
-
     return (
       <View style={styles.tenDaySection}>
         <Text style={{textAlign: 'center', backgroundColor: 'transparent'}} >Ten Day Forecast</Text>
-        { tenDayArray.map((value, i) => {
-          return (
-            <View key={i} style={styles.tenDayForecast}>
-              <Text style={{width: 87, backgroundColor: 'transparent'}}>
-                { tenDayArray[i].day }
-              </Text>
-              <Image style={styles.weatherIcon} source={{uri: tenDayArray[i].icon }} />
-              <Text style={{width: 87, textAlign: 'right', backgroundColor: 'transparent'}}>
-                { tenDayArray[i].high }&deg; / { tenDayArray[i].low }&deg;
-              </Text>
-            </View>
-          )
-        })
-        }
+        <FlatList
+          data={tenDayArray}
+          renderItem={singleDayForecast}
+          keyExtractor={ (item, index) => index }
+          />
       </View>
     );
-
 }
 
 const styles = StyleSheet.create({
