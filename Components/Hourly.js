@@ -1,29 +1,32 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
-
+import { StyleSheet, Text, View, Image, ScrollView, FlatList } from 'react-native';
 import Date from './Date';
+
+const oneHourForecast = ({ item }) => {
+  return (
+    <View style={style.hourly}>
+      <Text style={{backgroundColor: 'transparent'}}>
+        { item.time }
+      </Text>
+      <Image style={style.currentIcon} source={{uri: item.icon}} />
+      <Text style={{backgroundColor: 'transparent'}}>
+        { item.temp }&deg;
+      </Text>
+    </View>
+  )
+}
 
 const Hourly = ({ hourlyArray, dateObject }) => {
 
   return (
     <View style={style.hourlySection} >
       <Date { ...dateObject } />
-      <ScrollView style={style.hourlyForecast} horizontal={true}>
-        { hourlyArray.map((value, i) => {
-          return (
-            <View key={i} style={style.hourly}>
-              <Text style={{backgroundColor: 'transparent'}}>
-                { hourlyArray[i].time }
-              </Text>
-              <Image style={style.currentIcon} source={{uri: hourlyArray[i].icon}} />
-              <Text style={{backgroundColor: 'transparent'}}>
-                { hourlyArray[i].temp }&deg;
-              </Text>
-            </View>
-          )
-        })
-      }
-      </ScrollView>
+      <FlatList
+        style={style.hourlyForecast}
+        horizontal={true}
+        data={hourlyArray}
+        renderItem={oneHourForecast}
+        />
       <Image style={style.dotIcon} source={{uri: 'http://freeiconbox.com/icon/256/17764.png'}}/>
     </View>
   );

@@ -27,7 +27,7 @@ const WeatherCards = ({ weather }) => {
 
 const styles = StyleSheet.create({
   validCity: {
-    backgroundColor: 'transparent', 
+    backgroundColor: 'transparent',
     textAlign: 'center',
     paddingVertical: 10,
   }
