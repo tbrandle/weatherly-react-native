@@ -14,7 +14,6 @@ import {
 } from 'react-native';
 
 
-
 export default class Weatherly extends Component {
   constructor() {
     super();

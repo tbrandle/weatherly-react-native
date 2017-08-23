@@ -21,7 +21,8 @@ const Hourly = ({ hourlyArray, dateObject }) => {
               </Text>
             </View>
           )
-        }) }
+        })
+      }
       </ScrollView>
       <Image style={style.dotIcon} source={{uri: 'http://freeiconbox.com/icon/256/17764.png'}}/>
     </View>
