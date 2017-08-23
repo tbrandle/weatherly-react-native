@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image, FlatList } from 'react-native';
 
 const singleDayForecast = ({ item }) => {
   return (
-    <View key={i} style={styles.tenDayForecast}>
+    <View style={styles.tenDayForecast}>
       <Text style={{width: 87, backgroundColor: 'transparent'}}>
         { item.day }
       </Text>
