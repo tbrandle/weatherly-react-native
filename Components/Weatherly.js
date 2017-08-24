@@ -61,11 +61,12 @@ export default class Weatherly extends Component {
                underlineColorAndroid='transparent'
                value={this.state.location}
                onChangeText={(text) => this.setState({ location: text })}
+               onSubmitEditing={() => this.submitLocation()}
                />
              <TouchableOpacity
                title="submit"
                disabled={!this.state.location}
-               onPress={() => this.submitLocation() }
+               onPress={() => this.submitLocation()}
                >
                <Image style={{width: 28, height: 36}} source={{uri:'http://www.grote.com/wp-content/themes/grote/img/icon-search.png'}}/>
              </TouchableOpacity>
